@@ -564,3 +564,93 @@ document.addEventListener("keydown", (event) => {
     }
 
 });
+// TASK 10.3: EVENT BUBBLING AND EVENT DELEGATION
+// ============================================================
+
+// 1. Bubbling: clicking the child also triggers its parent listeners.
+const bubblingGrandparent = document.createElement("section");
+const bubblingParent = document.createElement("article");
+const bubblingChild = document.createElement("button");
+
+bubblingGrandparent.textContent = "Grandparent";
+bubblingParent.textContent = "Parent";
+bubblingChild.type = "button";
+bubblingChild.textContent = "Click the child";
+
+bubblingParent.appendChild(bubblingChild);
+bubblingGrandparent.appendChild(bubblingParent);
+document.body.appendChild(bubblingGrandparent);
+
+bubblingChild.addEventListener("click", () => console.log("Child clicked"));
+bubblingParent.addEventListener("click", () => console.log("Parent clicked"));
+bubblingGrandparent.addEventListener("click", () => console.log("Grandparent clicked"));
+
+// 2. Navigation delegation: one click listener handles all navigation links.
+const delegatedNavigation = document.querySelector(".nav-list");
+
+delegatedNavigation.addEventListener("click", event => {
+    const clickedItem = event.target.closest("li");
+
+    if (clickedItem && delegatedNavigation.contains(clickedItem)) {
+        console.log("Navigation item:", clickedItem.textContent.trim());
+    }
+});
+
+// 3. Task-list delegation: one listener on the UL handles task completion/deletion.
+const delegatedTaskSection = document.createElement("section");
+const delegatedTaskHeading = document.createElement("h2");
+const delegatedTaskForm = document.createElement("form");
+const delegatedTaskInput = document.createElement("input");
+const delegatedTaskAdd = document.createElement("button");
+const delegatedTaskList = document.createElement("ul");
+
+delegatedTaskHeading.textContent = "Event Delegation Task List";
+delegatedTaskInput.type = "text";
+delegatedTaskInput.placeholder = "Enter a task";
+delegatedTaskInput.setAttribute("aria-label", "New delegated task");
+delegatedTaskAdd.type = "submit";
+delegatedTaskAdd.textContent = "Add Task";
+
+delegatedTaskForm.append(delegatedTaskInput, delegatedTaskAdd);
+delegatedTaskSection.append(
+    delegatedTaskHeading,
+    delegatedTaskForm,
+    delegatedTaskList
+);
+document.body.appendChild(delegatedTaskSection);
+
+delegatedTaskForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const taskText = delegatedTaskInput.value.trim();
+    if (taskText === "") return;
+
+    const listItem = document.createElement("li");
+    const taskLabel = document.createElement("span");
+    const deleteButton = document.createElement("button");
+
+    taskLabel.textContent = taskText;
+    deleteButton.type = "button";
+    deleteButton.className = "delete-task";
+    deleteButton.textContent = "Delete";
+
+    listItem.append(taskLabel, " ", deleteButton);
+    delegatedTaskList.appendChild(listItem);
+    delegatedTaskInput.value = "";
+    delegatedTaskInput.focus();
+});
+
+delegatedTaskList.addEventListener("click", event => {
+    const deleteButton = event.target.closest(".delete-task");
+
+    if (deleteButton && delegatedTaskList.contains(deleteButton)) {
+        deleteButton.closest("li").remove();
+        return;
+    }
+
+    const taskLabel = event.target.closest("span");
+
+    if (taskLabel && delegatedTaskList.contains(taskLabel)) {
+        taskLabel.classList.toggle("completed");
+    }
+});
