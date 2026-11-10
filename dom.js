@@ -62,3 +62,14 @@ console.log("First child:", nav.firstElementChild);
 
 // Get the last direct child
 console.log("Last child:", nav.lastElementChild);
+
+// SIBLINGS
+
+// Select the article
+const article = document.querySelector("article");
+
+// Get the next sibling element
+console.log("Next sibling:", article.nextElementSibling);
+
+// Get the previous sibling element
+console.log("Previous sibling:", article.previousElementSibling);
