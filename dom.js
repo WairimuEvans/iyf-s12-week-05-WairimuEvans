@@ -73,3 +73,10 @@ console.log("Next sibling:", article.nextElementSibling);
 
 // Get the previous sibling element
 console.log("Previous sibling:", article.previousElementSibling);
+
+// DESCENDANTS
+
+// Select all links inside nav
+const navLinks = nav.querySelectorAll("a");
+
+console.log("Navigation descendants:", navLinks);
