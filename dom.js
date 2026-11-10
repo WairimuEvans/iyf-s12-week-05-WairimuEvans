@@ -233,3 +233,17 @@ const firstParagraph = articleElement.querySelector("p");
 
 // Insert newParagraph before firstParagraph
 articleElement.insertBefore(newParagraph, firstParagraph);
+
+// MODERN INSERTION METHODS
+
+// Add as the first child of article
+articleElement.prepend(newParagraph);
+
+// Add as the last child of article
+articleElement.append(newParagraph);
+
+// Insert before firstParagraph
+firstParagraph.before(newParagraph);
+
+// Insert after firstParagraph
+firstParagraph.after(newParagraph);
