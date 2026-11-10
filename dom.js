@@ -350,3 +350,21 @@ button.addEventListener("click", handleClick);
 
 // Remove the named function
 button.removeEventListener("click", handleClick);
+
+// MOUSE EVENTS
+
+button.addEventListener("dblclick", () => {
+    console.log("Button double-clicked!");
+});
+
+button.addEventListener("mouseenter", () => {
+    console.log("Mouse entered button!");
+});
+
+button.addEventListener("mouseleave", () => {
+    console.log("Mouse left button!");
+});
+
+button.addEventListener("mousemove", () => {
+    console.log("Mouse moving over button!");
+});
