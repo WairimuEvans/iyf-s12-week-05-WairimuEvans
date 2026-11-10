@@ -189,3 +189,20 @@ console.log("Category:", dataElement.dataset.category);
 dataElement.dataset.newAttr = "value";
 
 console.log("New attribute:", dataElement.dataset.newAttr);
+
+// EXERCISE 4: MODIFYING STYLES
+
+// Select the main container
+const mainContainer = document.querySelector(".container");
+
+// Modify individual styles
+mainContainer.style.backgroundColor = "#f0f0f0";
+mainContainer.style.padding = "30px";
+mainContainer.style.borderRadius = "8px";
+
+// Modify multiple styles using Object.assign()
+Object.assign(mainContainer.style, {
+    backgroundColor: "#333",
+    color: "white",
+    padding: "20px"
+});
