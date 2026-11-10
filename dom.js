@@ -476,3 +476,13 @@ resetButton.addEventListener("click", () => {
     count = 0;
     updateCounter();
 });
+
+// TASK 10.2: EVENT OBJECT
+
+document.addEventListener("click", (event) => {
+    console.log("Event target:", event.target);
+    console.log("Current target:", event.currentTarget);
+    console.log("Event type:", event.type);
+    console.log("Mouse X:", event.clientX);
+    console.log("Mouse Y:", event.clientY);
+});
