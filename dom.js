@@ -448,3 +448,31 @@ counterSection.append(
 );
 
 document.body.appendChild(counterSection);
+
+// CLICK COUNTER: FUNCTIONALITY
+
+let count = 0;
+
+function updateCounter() {
+    counterDisplay.textContent = `Count: ${count}`;
+}
+
+// Increase count
+increaseButton.addEventListener("click", () => {
+    count++;
+    updateCounter();
+});
+
+// Decrease count
+decreaseButton.addEventListener("click", () => {
+    if (count > 0) {
+        count--;
+        updateCounter();
+    }
+});
+
+// Reset count
+resetButton.addEventListener("click", () => {
+    count = 0;
+    updateCounter();
+});
