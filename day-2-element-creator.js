@@ -1,4 +1,3 @@
-
 const addParagraphButton = document.getElementById("add-paragraph");
 const paragraphContainer = document.getElementById("paragraph-container");
 
