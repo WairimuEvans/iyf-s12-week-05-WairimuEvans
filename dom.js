@@ -110,3 +110,19 @@ const footerElement = document.querySelector("footer");
 const bodyElement = footerElement.parentElement;
 
 console.log("Footer parent:", bodyElement);
+
+// TASK 9.3: MODIFYING CONTENT
+
+// Select the h1 element
+const pageHeading = document.querySelector("h1");
+
+// Read text content
+console.log("Text Content:", pageHeading.textContent);
+
+// Read visible text
+console.log("Inner Text:", pageHeading.innerText);
+
+// Modify text
+pageHeading.textContent = "My DOM Learning Journey";
+
+console.log("Updated Heading:", pageHeading.textContent);
