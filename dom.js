@@ -368,3 +368,35 @@ button.addEventListener("mouseleave", () => {
 button.addEventListener("mousemove", () => {
     console.log("Mouse moving over button!");
 });
+
+// KEYBOARD EVENTS
+
+document.addEventListener("keydown", (event) => {
+    console.log("Key pressed:", event.key);
+});
+
+document.addEventListener("keyup", (event) => {
+    console.log("Key released:", event.key);
+});
+
+// FORM EVENTS
+
+const seccontactForm = document.querySelector("#contact-form");
+const nameInput = document.querySelector("#name");
+
+nameInput.addEventListener("focus", () => {
+    console.log("Name input focused!");
+});
+
+nameInput.addEventListener("blur", () => {
+    console.log("Name input lost focus!");
+});
+
+nameInput.addEventListener("input", (event) => {
+    console.log("Name entered:", event.target.value);
+});
+
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("Form submitted!");
+});
