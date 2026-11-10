@@ -51,3 +51,14 @@ const nav = document.querySelector("nav");
 
 // Get its parent
 console.log("Nav parent:", nav.parentElement);
+
+// CHILDREN
+
+// Get all direct children of nav
+console.log("Nav children:", nav.children);
+
+// Get the first direct child
+console.log("First child:", nav.firstElementChild);
+
+// Get the last direct child
+console.log("Last child:", nav.lastElementChild);
