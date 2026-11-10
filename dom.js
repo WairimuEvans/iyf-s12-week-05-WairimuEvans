@@ -654,3 +654,104 @@ delegatedTaskList.addEventListener("click", event => {
         taskLabel.classList.toggle("completed");
     }
 });
+// TASK 10.4: FORM HANDLING AND VALIDATION
+// Uses contactForm, nameInput and emailInput already declared in dom.js.
+// ============================================================
+
+function showError(input, message) {
+    input.classList.add("error");
+
+    let errorElement = document.querySelector(
+        `[data-error-for="${input.id}"]`
+    );
+
+    if (!errorElement) {
+        errorElement = document.createElement("p");
+        errorElement.dataset.errorFor = input.id;
+        errorElement.setAttribute("role", "alert");
+        input.insertAdjacentElement("afterend", errorElement);
+    }
+
+    errorElement.textContent = message;
+}
+
+function clearError(input) {
+    input.classList.remove("error");
+
+    const errorElement = document.querySelector(
+        `[data-error-for="${input.id}"]`
+    );
+
+    if (errorElement) {
+        errorElement.remove();
+    }
+}
+
+const validEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validateName() {
+    const valid = nameInput.value.trim().length >= 2;
+
+    if (valid) {
+        clearError(nameInput);
+    } else {
+        showError(nameInput, "Name must contain at least 2 characters.");
+    }
+
+    return valid;
+}
+
+function validateEmail() {
+    const valid = validEmailPattern.test(emailInput.value.trim());
+
+    if (valid) {
+        clearError(emailInput);
+    } else {
+        showError(emailInput, "Enter a valid email address.");
+    }
+
+    return valid;
+}
+
+function isValid() {
+    const nameIsValid = validateName();
+    const emailIsValid = validateEmail();
+
+    return nameIsValid && emailIsValid;
+}
+
+function showSuccess(message) {
+    let successElement = contactForm.querySelector(".success-message");
+
+    if (!successElement) {
+        successElement = document.createElement("p");
+        successElement.className = "success-message";
+        successElement.setAttribute("role", "status");
+        contactForm.appendChild(successElement);
+    }
+
+    successElement.textContent = message;
+}
+
+nameInput.addEventListener("input", validateName);
+emailInput.addEventListener("input", validateEmail);
+
+contactForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const formValues = Object.fromEntries(formData.entries());
+
+    console.log("Submitted form data:", formValues);
+
+    if (!isValid()) {
+        const oldSuccess = contactForm.querySelector(".success-message");
+        if (oldSuccess) oldSuccess.remove();
+        return;
+    }
+
+    showSuccess("Your form has been submitted successfully!");
+    contactForm.reset();
+    clearError(nameInput);
+    clearError(emailInput);
+});
