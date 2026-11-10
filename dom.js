@@ -255,3 +255,14 @@ const footer = document.querySelector("footer");
 
 // Remove the footer
 footer.remove();
+
+// REMOVE CHILD ELEMENT
+
+// Select the navigation
+const navigation = document.querySelector("nav");
+
+// Select the last navigation list item
+const lastLink = navigation.querySelector("li:last-child");
+
+// Remove it through its parent
+lastLink.parentElement.removeChild(lastLink);
