@@ -290,3 +290,32 @@ clone.querySelector("a").textContent = "New Link";
 
 // Add the cloned item to the navigation list
 document.querySelector(".nav-list").appendChild(clone);
+
+// BUILD: DYNAMIC NAVIGATION ITEM CREATOR
+
+function addNavItem(text, href) {
+    // Create a new list item
+    const listItem = document.createElement("li");
+
+    // Create a new anchor element
+    const link = document.createElement("a");
+
+    // Set the link text
+    link.textContent = text;
+
+    // Set the destination
+    link.href = href;
+
+    // Add the nav-link class
+    link.className = "nav-link";
+
+    // Place the link inside the list item
+    listItem.appendChild(link);
+
+    // Add the list item to the navigation list
+    document.querySelector(".nav-list").appendChild(listItem);
+}
+
+// Create two new navigation items
+addNavItem("Blog", "/blog");
+addNavItem("Portfolio", "/portfolio");
