@@ -126,3 +126,32 @@ console.log("Inner Text:", pageHeading.innerText);
 pageHeading.textContent = "My DOM Learning Journey";
 
 console.log("Updated Heading:", pageHeading.textContent);
+
+// EXERCISE 2: HTML CONTENT
+
+// Select the article
+const articleContent = document.querySelector("article");
+
+// Read HTML content
+console.log("Original HTML:", articleContent.innerHTML);
+
+// Modify HTML content
+articleContent.innerHTML = `
+    <h2>My Updated Article</h2>
+    <p>I am learning how to manipulate HTML using JavaScript.</p>
+`;
+
+console.log("Updated HTML:", articleContent.innerHTML);
+
+// SECURITY PRACTICE
+
+const userInput = `<img src="x" onerror="alert('hacked!')">`;
+
+// Treating user input as HTML is dangerous.
+// Do not execute this using innerHTML.
+console.log("Safe text output:", userInput);
+
+// textContent displays the characters instead of interpreting them.
+const safeOutput = document.createElement("p");
+safeOutput.textContent = userInput;
+console.log("Safe element:", safeOutput);
