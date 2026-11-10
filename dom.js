@@ -564,8 +564,8 @@ document.addEventListener("keydown", (event) => {
     }
 
 });
-// TASK 10.3: EVENT BUBBLING AND EVENT DELEGATION
-// ============================================================
+
+// TASK 10.3: EVENT BUBBLING AND EVENT DELEGATION 
 
 // 1. Bubbling: clicking the child also triggers its parent listeners.
 const bubblingGrandparent = document.createElement("section");
@@ -654,9 +654,8 @@ delegatedTaskList.addEventListener("click", event => {
         taskLabel.classList.toggle("completed");
     }
 });
+
 // TASK 10.4: FORM HANDLING AND VALIDATION
-// Uses contactForm, nameInput and emailInput already declared in dom.js.
-// ============================================================
 
 function showError(input, message) {
     input.classList.add("error");
