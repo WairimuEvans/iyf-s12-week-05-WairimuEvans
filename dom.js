@@ -80,3 +80,9 @@ console.log("Previous sibling:", article.previousElementSibling);
 const navLinks = nav.querySelectorAll("a");
 
 console.log("Navigation descendants:", navLinks);
+
+// 1. Header to nav
+const headerElement = document.querySelector("header");
+const headerNav = headerElement.querySelector("nav");
+
+console.log("Header navigation:", headerNav);
