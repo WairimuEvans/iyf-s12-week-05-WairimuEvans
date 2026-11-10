@@ -414,3 +414,37 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
     console.log("Page fully loaded!");
 });
+
+// CLICK COUNTER: INTERFACE
+
+const counterSection = document.createElement("section");
+counterSection.className = "counter-section";
+
+const counterHeading = document.createElement("h2");
+counterHeading.textContent = "Click Counter";
+
+const counterDisplay = document.createElement("p");
+counterDisplay.id = "counter-display";
+counterDisplay.textContent = "Count: 0";
+
+const increaseButton = document.createElement("button");
+increaseButton.id = "increase-button";
+increaseButton.textContent = "+";
+
+const decreaseButton = document.createElement("button");
+decreaseButton.id = "decrease-button";
+decreaseButton.textContent = "-";
+
+const resetButton = document.createElement("button");
+resetButton.id = "reset-button";
+resetButton.textContent = "Reset";
+
+counterSection.append(
+    counterHeading,
+    counterDisplay,
+    increaseButton,
+    decreaseButton,
+    resetButton
+);
+
+document.body.appendChild(counterSection);
