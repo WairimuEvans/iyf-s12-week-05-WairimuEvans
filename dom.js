@@ -86,3 +86,9 @@ const headerElement = document.querySelector("header");
 const headerNav = headerElement.querySelector("nav");
 
 console.log("Header navigation:", headerNav);
+
+// 2. First navigation link to its parent li
+const firstLinkElement = document.querySelector(".nav-link");
+const parentListItem = firstLinkElement.parentElement;
+
+console.log("Parent list item:", parentListItem);
