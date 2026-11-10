@@ -92,3 +92,9 @@ const firstLinkElement = document.querySelector(".nav-link");
 const parentListItem = firstLinkElement.parentElement;
 
 console.log("Parent list item:", parentListItem);
+
+// 3. Article to its next sibling
+const articleElement = document.querySelector("article");
+const nextSection = articleElement.nextElementSibling;
+
+console.log("Next sibling section:", nextSection);
