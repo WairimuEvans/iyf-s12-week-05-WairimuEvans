@@ -319,3 +319,22 @@ function addNavItem(text, href) {
 // Create two new navigation items
 addNavItem("Blog", "/blog");
 addNavItem("Portfolio", "/portfolio");
+
+// TASK 10.1: EVENT LISTENERS
+
+// Create a button
+const button = document.createElement("button");
+button.textContent = "Click Me";
+
+// Add button to the page
+document.body.appendChild(button);
+
+// Add a click event listener
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});
+
+// Add another click listener using an arrow function
+button.addEventListener("click", () => {
+    console.log("Clicked again!");
+});
