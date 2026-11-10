@@ -221,7 +221,15 @@ newParagraph.textContent = "This is a new paragraph!";
 newParagraph.className = "content highlight";
 
 // Select the article
-const articleElement = document.querySelector("article");
+const secondArticleElement = document.querySelector("article");
 
 // Add paragraph at the end
 articleElement.appendChild(newParagraph);
+
+// INSERT BEFORE ANOTHER ELEMENT
+
+// Select the first paragraph inside article
+const firstParagraph = articleElement.querySelector("p");
+
+// Insert newParagraph before firstParagraph
+articleElement.insertBefore(newParagraph, firstParagraph);
