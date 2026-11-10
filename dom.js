@@ -276,3 +276,17 @@ articleElement.innerHTML = "";
 while (articleElement.firstChild) {
     articleElement.removeChild(articleElement.firstChild);
 }
+
+// EXERCISE 3: CLONING ELEMENTS
+
+// Select an existing navigation item
+const navItem = document.querySelector(".nav-link").parentElement;
+
+// Clone the entire list item
+const clone = navItem.cloneNode(true);
+
+// Change the cloned link text
+clone.querySelector("a").textContent = "New Link";
+
+// Add the cloned item to the navigation list
+document.querySelector(".nav-list").appendChild(clone);
