@@ -338,3 +338,15 @@ button.addEventListener("click", function() {
 button.addEventListener("click", () => {
     console.log("Clicked again!");
 });
+
+// NAMED EVENT FUNCTION
+
+function handleClick() {
+    console.log("Handled!");
+}
+
+// Attach the named function
+button.addEventListener("click", handleClick);
+
+// Remove the named function
+button.removeEventListener("click", handleClick);
