@@ -400,3 +400,17 @@ contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("Form submitted!");
 });
+
+// WINDOW EVENTS
+
+window.addEventListener("resize", () => {
+    console.log("Window resized!");
+});
+
+window.addEventListener("scroll", () => {
+    console.log("Page scrolled!");
+});
+
+window.addEventListener("load", () => {
+    console.log("Page fully loaded!");
+});
