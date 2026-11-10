@@ -486,3 +486,81 @@ document.addEventListener("click", (event) => {
     console.log("Mouse X:", event.clientX);
     console.log("Mouse Y:", event.clientY);
 });
+
+// PREVENT DEFAULT BEHAVIOUR
+
+const testLink = document.createElement("a");
+
+testLink.href = "https://www.example.com";
+testLink.textContent = "Test Prevent Default";
+
+document.body.appendChild(testLink);
+
+testLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("Default navigation prevented!");
+});
+
+// STOP EVENT PROPAGATION
+
+const parentSection = document.createElement("section");
+const childArticle = document.createElement("article");
+const childButton = document.createElement("button");
+
+parentSection.textContent = "Parent Section";
+childArticle.textContent = "Child Article";
+childButton.textContent = "Click Child";
+
+childArticle.appendChild(childButton);
+parentSection.appendChild(childArticle);
+document.body.appendChild(parentSection);
+
+// Parent listener
+parentSection.addEventListener("click", () => {
+    console.log("Parent section clicked!");
+});
+
+// Child listener
+childButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    console.log("Child button clicked!");
+});
+
+// KEYBOARD EVENT PROPERTIES
+
+document.addEventListener("keydown", (event) => {
+    console.log("Key:", event.key);
+    console.log("Code:", event.code);
+    console.log("Shift pressed:", event.shiftKey);
+    console.log("Ctrl pressed:", event.ctrlKey);
+    console.log("Alt pressed:", event.altKey);
+});
+
+// KEYBOARD SHORTCUTS
+
+document.addEventListener("keydown", (event) => {
+
+    // Ctrl + S: Save shortcut
+    if (event.ctrlKey && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        alert("Saved!");
+    }
+
+    // Escape: Clear form inputs
+    if (event.key === "Escape") {
+        const inputs = contactForm.querySelectorAll("input");
+
+        inputs.forEach((input) => {
+            input.value = "";
+        });
+
+        console.log("Form inputs cleared!");
+    }
+
+    // Ctrl + Enter: Submit form
+    if (event.ctrlKey && event.key === "Enter") {
+        event.preventDefault();
+        contactForm.requestSubmit();
+    }
+
+});
