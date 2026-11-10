@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - Dark Mode</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
+            background: #ffffff;
+            color: #222222;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        body.dark-mode {
+            background: #171717;
+            color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Dark Mode Toggle</h1>
+        <p>Click the button to switch between light and dark themes.</p>
+        <button id="theme-toggle" type="button" aria-pressed="false">Enable Dark Mode</button>
+    </main>
+    <script src="day-5-dark-mode.js"></script>
+</body>
+</html>
