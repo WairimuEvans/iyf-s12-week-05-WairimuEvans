@@ -104,3 +104,9 @@ const navList = document.querySelector(".nav-list");
 const listItems = navList.children;
 
 console.log("Navigation list children:", listItems);
+
+// 5. Footer to body
+const footerElement = document.querySelector("footer");
+const bodyElement = footerElement.parentElement;
+
+console.log("Footer parent:", bodyElement);
