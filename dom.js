@@ -266,3 +266,13 @@ const lastLink = navigation.querySelector("li:last-child");
 
 // Remove it through its parent
 lastLink.parentElement.removeChild(lastLink);
+
+// CLEAR ALL CHILDREN
+
+// Method 1: Using innerHTML
+articleElement.innerHTML = "";
+
+// Method 2: Using a while loop
+while (articleElement.firstChild) {
+    articleElement.removeChild(articleElement.firstChild);
+}
