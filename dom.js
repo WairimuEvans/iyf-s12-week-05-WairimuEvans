@@ -247,3 +247,11 @@ firstParagraph.before(newParagraph);
 
 // Insert after firstParagraph
 firstParagraph.after(newParagraph);
+
+// EXERCISE 2: REMOVING ELEMENTS
+
+// Select the footer
+const footer = document.querySelector("footer");
+
+// Remove the footer
+footer.remove();
