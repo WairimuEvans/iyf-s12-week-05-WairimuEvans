@@ -155,3 +155,37 @@ console.log("Safe text output:", userInput);
 const safeOutput = document.createElement("p");
 safeOutput.textContent = userInput;
 console.log("Safe element:", safeOutput);
+
+// EXERCISE 3: ATTRIBUTES
+
+// Select the first navigation link
+const linkElement = document.querySelector(".nav-link");
+
+// Get attribute
+console.log("Original href:", linkElement.getAttribute("href"));
+
+// Access attribute through property
+console.log("Href property:", linkElement.href);
+
+// Set attribute
+linkElement.setAttribute("href", "https://developer.mozilla.org");
+
+// Check attribute
+console.log("Has target:", linkElement.hasAttribute("target"));
+
+// Remove attribute
+linkElement.removeAttribute("target");
+
+console.log("Updated href:", linkElement.getAttribute("href"));
+
+// DATA ATTRIBUTES
+
+const dataElement = document.querySelector("[data-id]");
+
+console.log("ID:", dataElement.dataset.id);
+console.log("Category:", dataElement.dataset.category);
+
+// Create a new data attribute
+dataElement.dataset.newAttr = "value";
+
+console.log("New attribute:", dataElement.dataset.newAttr);
