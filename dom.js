@@ -206,3 +206,22 @@ Object.assign(mainContainer.style, {
     color: "white",
     padding: "20px"
 });
+
+// TASK 9.4: ADDING AND REMOVING ELEMENTS
+
+// EXERCISE 1: CREATING ELEMENTS
+
+// Create a new paragraph
+const newParagraph = document.createElement("p");
+
+// Add text to the paragraph
+newParagraph.textContent = "This is a new paragraph!";
+
+// Add CSS classes
+newParagraph.className = "content highlight";
+
+// Select the article
+const articleElement = document.querySelector("article");
+
+// Add paragraph at the end
+articleElement.appendChild(newParagraph);
