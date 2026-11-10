@@ -43,3 +43,11 @@ console.log("First navigation link:", firstNavLink);
 // 7. Select the last paragraph
 const lastParagraph = document.querySelector("p:last-of-type");
 console.log("Last paragraph:", lastParagraph);
+
+// TASK 9.2: DOM TRAVERSAL
+
+// Select the navigation element
+const nav = document.querySelector("nav");
+
+// Get its parent
+console.log("Nav parent:", nav.parentElement);
