@@ -98,3 +98,9 @@ const articleElement = document.querySelector("article");
 const nextSection = articleElement.nextElementSibling;
 
 console.log("Next sibling section:", nextSection);
+
+// 4. Select ul and get all child li elements
+const navList = document.querySelector(".nav-list");
+const listItems = navList.children;
+
+console.log("Navigation list children:", listItems);
