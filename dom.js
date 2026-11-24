@@ -269,13 +269,19 @@ lastLink.parentElement.removeChild(lastLink);
 
 // CLEAR ALL CHILDREN
 
+// Demonstrate each clearing method independently on a populated clone.
+
 // Method 1: Using innerHTML
-articleElement.innerHTML = "";
+const innerHTMLDemo = articleElement.cloneNode(true);
+innerHTMLDemo.innerHTML = "";
+console.log("Cleared with innerHTML:", innerHTMLDemo.children.length);
 
 // Method 2: Using a while loop
-while (articleElement.firstChild) {
-    articleElement.removeChild(articleElement.firstChild);
+const whileLoopDemo = articleElement.cloneNode(true);
+while (whileLoopDemo.firstChild) {
+    whileLoopDemo.removeChild(whileLoopDemo.firstChild);
 }
+console.log("Cleared with removeChild loop:", whileLoopDemo.children.length);
 
 // EXERCISE 3: CLONING ELEMENTS
 
