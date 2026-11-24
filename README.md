@@ -37,11 +37,11 @@ Daily DOM Challenges
 
 This repository also includes five daily challenges:
 
-1. Color Changer – Changes an element's background color through user interaction.
-2. Element Creator – Creates new HTML elements dynamically.
-3. Image Remover – Removes an image from the webpage.
-4. Content Copier – Copies content through a button interaction.
-5. Dark Mode – Toggles between light and dark display modes.
+1. Color Changer – Changes all h1, h2, and h3 text colors to a random color.
+2. Element Creator – Creates numbered paragraphs, each with its own delete button.
+3. Image Remover – Removes all images and also supports hiding/showing them.
+4. Content Copier – Copies source text into a target area.
+5. Dark Mode – Toggles between light and dark display modes with a CSS transition.
 
 How to Run the Projects
 
@@ -58,17 +58,20 @@ iyf-s12-week-05-WairimuEvans/
 ├── app.js
 ├── dom-practice.html
 ├── dom.js
-├── day-1-color-changer.html
-├── day-1-color-changer.js
-├── day-2-element-creator.html
-├── day-2-element-creator.js
-├── day-3-image-remover.html
-├── day-3-image-remover.js
-├── day-4-content-copier.html
-├── day-4-content-copier.js
-├── day-5-dark-mode.html
-└── day-5-dark-mode.js
+├── daily-challenges/
+│   ├── day-1-color-changer.html
+│   ├── day-1-color-changer.js
+│   ├── day-2-element-creator.html
+│   ├── day-2-element-creator.js
+│   ├── day-3-image-remover.html
+│   ├── day-3-image-remover.js
+│   ├── day-4-content-copier.html
+│   ├── day-4-content-copier.js
+│   ├── day-5-dark-mode.html
+│   └── day-5-dark-mode.js
+├── .gitignore
+└── README.md
 
-Lesson Learnt 
+Lessons Learned 
 
 Through these exercises, I gained practical experience using JavaScript to manipulate the DOM, handle user interactions, validate forms, and build interactive web applications.
